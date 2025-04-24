@@ -3,6 +3,8 @@ import { Montserrat } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
+import { QueryProvider } from "@/components/mycomponents/queryProvider";
+
 const mont = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(mont.className, "antialiased min-h-screen")}>
-        {children}
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   );
